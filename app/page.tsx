@@ -345,9 +345,8 @@ export default function Home() {
                             Google Maps
                           </p>
                           <p className="mt-1 text-sm text-[var(--text-soft)]">
-                            Gerekirse <code>data/site.ts</code> içindeki{" "}
-                            <code>mapEmbedSrc</code> ve <code>mapsHref</code>{" "}
-                            alanlarını güncelleyin.
+                            Adana lokasyonumuz için harita ve yol tarifi bilgilerine bu
+                            alandan ulaşabilirsiniz.
                           </p>
                         </div>
                         <a
