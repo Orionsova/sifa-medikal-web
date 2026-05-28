@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7fbfd;
+  --foreground: #12304a;
+  --brand-navy: #123b5d;
+  --brand-blue: #2e7db7;
+  --brand-mint: #8dcbb5;
+  --surface-blue: #edf6fb;
+  --surface-mint: #eff8f4;
+  --surface-card: rgba(255, 255, 255, 0.92);
+  --line-soft: rgba(18, 59, 93, 0.1);
+  --line-strong: rgba(46, 125, 183, 0.22);
+  --text-main: #17324b;
+  --text-soft: #547086;
+  --shadow-soft: 0 18px 50px rgba(23, 50, 75, 0.08);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at top left, rgba(141, 203, 181, 0.24), transparent 28%),
+    radial-gradient(circle at top right, rgba(46, 125, 183, 0.18), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f7fbfd 48%, #eef6fa 100%);
+}
+
+@layer base {
+  * {
+    border-color: var(--line-soft);
+  }
+
+  ::selection {
+    background: rgba(46, 125, 183, 0.18);
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-shell {
+    @apply py-16 sm:py-20;
+  }
+
+  .card-surface {
+    background: var(--surface-card);
+    border: 1px solid var(--line-soft);
+    box-shadow: var(--shadow-soft);
+    @apply rounded-[28px] backdrop-blur;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5;
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-navy));
+    box-shadow: 0 14px 30px rgba(18, 59, 93, 0.18);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-bold transition;
+    border-color: var(--line-strong);
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--brand-navy);
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border bg-white px-4 py-3 text-base outline-none transition;
+    border-color: var(--line-soft);
+    color: var(--text-main);
+  }
+
+  .input-field:focus {
+    border-color: var(--brand-blue);
+    box-shadow: 0 0 0 4px rgba(46, 125, 183, 0.12);
+  }
 }
