@@ -12,14 +12,40 @@ const initialForm = {
 };
 
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState(initialForm);
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const fullName = form.fullName.trim();
+    const phone = form.phone.trim();
+    const topic = form.topic.trim();
+    const message = form.message.trim();
+
+    if (!fullName || !phone || !message) {
+      setErrorMessage("Lütfen Ad Soyad, Telefon ve Mesaj alanlarını doldurun.");
+      return;
+    }
+
+    setErrorMessage("");
+
+    const whatsappMessage = [
+      "Merhaba, web siteniz üzerinden iletişime geçiyorum.",
+      "",
+      `Ad Soyad: ${fullName}`,
+      `Telefon: ${phone}`,
+      `Konu: ${topic}`,
+      `Mesaj: ${message}`,
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/${siteData.whatsappNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
     console.log("contact-form", form);
-    setSubmitted(true);
     setForm(initialForm);
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -31,7 +57,6 @@ export function ContactForm() {
               Ad Soyad
             </span>
             <input
-              required
               value={form.fullName}
               onChange={(event) =>
                 setForm((current) => ({ ...current, fullName: event.target.value }))
@@ -46,7 +71,6 @@ export function ContactForm() {
               Telefon
             </span>
             <input
-              required
               value={form.phone}
               onChange={(event) =>
                 setForm((current) => ({ ...current, phone: event.target.value }))
@@ -63,7 +87,6 @@ export function ContactForm() {
             Ürün / Hizmet Konusu
           </span>
           <input
-            required
             value={form.topic}
             onChange={(event) =>
               setForm((current) => ({ ...current, topic: event.target.value }))
@@ -78,7 +101,6 @@ export function ContactForm() {
             Mesaj
           </span>
           <textarea
-            required
             rows={5}
             value={form.message}
             onChange={(event) =>
@@ -94,13 +116,12 @@ export function ContactForm() {
         </button>
       </form>
 
-      {submitted ? (
-        <div className="mt-5 flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
-          <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0" />
-          <p>{siteData.contactSuccessMessage}</p>
+      {errorMessage ? (
+        <div className="mt-5 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          <Icon name="close" className="mt-0.5 h-5 w-5 shrink-0" />
+          <p>{errorMessage}</p>
         </div>
       ) : null}
     </div>
   );
 }
-

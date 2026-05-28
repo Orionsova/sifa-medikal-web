@@ -52,6 +52,7 @@ export const siteData = {
   city: "Adana",
   phone: "0505 477 54 94",
   phoneHref: "tel:+905054775494",
+  whatsappNumber: "905054775494",
   whatsappHref: "https://wa.me/905054775494",
   instagramHandle: "@sifa.medikal94",
   instagramHref: "https://instagram.com/sifa.medikal94",
