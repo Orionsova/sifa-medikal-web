@@ -58,7 +58,7 @@ export default function Home() {
                     <a
                       href={siteData.whatsappHref}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="btn-secondary justify-center"
                     >
                       <Icon name="whatsapp" className="h-5 w-5" />
@@ -226,7 +226,7 @@ export default function Home() {
                     <a
                       href={siteData.whatsappHref}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="btn-secondary mt-6 justify-center"
                     >
                       Bilgi Al
@@ -264,7 +264,7 @@ export default function Home() {
                       <a
                         href={siteData.whatsappHref}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="btn-primary mt-6"
                       >
                         WhatsApp ile Sorun
@@ -317,7 +317,11 @@ export default function Home() {
                           key={item.label}
                           href={item.href}
                           target={item.icon === "phone" ? undefined : "_blank"}
-                          rel={item.icon === "phone" ? undefined : "noreferrer"}
+                          rel={
+                            item.icon === "phone"
+                              ? undefined
+                              : "noopener noreferrer"
+                          }
                           className="card-surface group flex items-center gap-4 p-5 transition hover:-translate-y-0.5 hover:border-[var(--line-strong)]"
                         >
                           <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[var(--surface-blue)] text-[var(--brand-blue)]">
@@ -347,10 +351,10 @@ export default function Home() {
                           </p>
                         </div>
                         <a
-                          href={siteData.mapsHref}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn-secondary shrink-0"
+                        href={siteData.mapsHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary shrink-0"
                         >
                           <Icon name="location" className="h-4 w-4" />
                           Yol Tarifi
@@ -423,10 +427,10 @@ export default function Home() {
               </h3>
               <div className="mt-4 flex flex-col gap-3 text-base text-[var(--text-soft)]">
                 <a href={siteData.phoneHref}>{siteData.phone}</a>
-                <a href={siteData.whatsappHref} target="_blank" rel="noreferrer">
+                <a href={siteData.whatsappHref} target="_blank" rel="noopener noreferrer">
                   WhatsApp
                 </a>
-                <a href={siteData.instagramHref} target="_blank" rel="noreferrer">
+                <a href={siteData.instagramHref} target="_blank" rel="noopener noreferrer">
                   {siteData.instagramHandle}
                 </a>
                 <a href="#!" aria-disabled="true">
@@ -446,7 +450,7 @@ export default function Home() {
         <a
           href={siteData.whatsappHref}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           aria-label={"WhatsApp'tan bilgi al"}
           className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_18px_40px_rgba(37,211,102,0.35)] transition hover:scale-105"
         >

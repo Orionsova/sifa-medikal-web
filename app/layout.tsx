@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { siteData } from "@/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteData.siteUrl),
   title: "Şifa Medikal | Sigvaris, Juzo, Supportline Yetkili Bayi",
   description:
     "Şifa Medikal; Sigvaris, Juzo ve Supportline markalarının tek yetkili bölge bayisi olarak varis çorabı, lenfödem bası giysileri ve medikal kompresyon ürünlerinde güvenilir çözümler sunar.",
@@ -26,8 +28,16 @@ export const metadata: Metadata = {
     title: "Şifa Medikal | Sigvaris, Juzo, Supportline Yetkili Bayi",
     description:
       "Sigvaris, Juzo ve Supportline markalarının yetkili bölge bayisi olarak varis çorabı, lenfödem ürünleri ve medikal kompresyon çözümleri sunuyoruz.",
+    url: siteData.siteUrl,
+    siteName: siteData.companyName,
     locale: "tr_TR",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Şifa Medikal | Sigvaris, Juzo, Supportline Yetkili Bayi",
+    description:
+      "Varis çorabı, lenfödem ürünleri ve medikal kompresyon çözümlerinde güvenilir yetkili bayi desteği.",
   },
   alternates: {
     canonical: "/",

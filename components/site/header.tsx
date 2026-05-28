@@ -33,7 +33,7 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:block">
-            <a href={siteData.whatsappHref} target="_blank" rel="noreferrer" className="btn-primary">
+            <a href={siteData.whatsappHref} target="_blank" rel="noopener noreferrer" className="btn-primary">
               {"WhatsApp'tan Bilgi Al"}
             </a>
           </div>
@@ -65,7 +65,7 @@ export function Header() {
               <a
                 href={siteData.whatsappHref}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="btn-primary mt-2 justify-center"
               >

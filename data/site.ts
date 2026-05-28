@@ -49,6 +49,7 @@ export type IconName =
 
 export const siteData = {
   companyName: "Şifa Medikal",
+  siteUrl: "https://www.sifamedikal.com",
   city: "Adana",
   phone: "0505 477 54 94",
   phoneHref: "tel:+905054775494",
