@@ -77,10 +77,13 @@ export default function Home() {
                         <p className="mt-2 text-base font-extrabold text-[var(--brand-navy)] sm:text-lg">
                           {siteData.authorizedDealerText}
                         </p>
+                        <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--text-soft)]">
+                          {siteData.authorizedDealerSupportText}
+                        </p>
                       </div>
                     </div>
                     <span className="inline-flex w-fit rounded-full bg-[var(--surface-mint)] px-3 py-2 text-sm font-semibold text-[var(--brand-navy)]">
-                      Güven odaklı kurumsal tedarik yaklaşımı
+                      Orijinal ve güvenilir ürün odağı
                     </span>
                   </div>
                   <div className="grid gap-4 sm:grid-cols-3">
@@ -109,11 +112,16 @@ export default function Home() {
                         <div className="flex items-start justify-between gap-4">
                           <div>
                             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--brand-blue)]">
-                              Medikal Danışmanlık
+                              Kaliteli ve Güvenilir Ürün
                             </p>
                             <h2 className="mt-3 text-2xl font-extrabold text-[var(--brand-navy)]">
-                              İhtiyaca uygun ürün grubuna hızlı yönlendirme
+                              Orijinal ürün seçimi ve güvenilir medikal çözümler
                             </h2>
+                            <p className="mt-3 text-sm leading-6 text-[var(--text-soft)]">
+                              Varis çorabı, bası giysileri ve lenfödem ürünleri dahil
+                              ihtiyaç duyulan alanlarda kaliteli, güvenilir ve doğru ürün
+                              seçimine odaklanıyoruz.
+                            </p>
                           </div>
                           <div className="rounded-2xl bg-white/90 p-3 text-[var(--brand-blue)] shadow-sm">
                             <Icon name="shield" className="h-7 w-7" />
@@ -152,13 +160,13 @@ export default function Home() {
                             Özel tabanlıklar
                           </span>
                           <span className="rounded-full bg-[var(--surface-mint)] px-3 py-2">
-                            Varis çorabı
+                            Sigvaris varis çorabı
                           </span>
                           <span className="rounded-full bg-[var(--surface-blue)] px-3 py-2">
-                            Solunum cihazları
+                            Juzo lenfödem ürünleri
                           </span>
                           <span className="rounded-full bg-[var(--surface-mint)] px-3 py-2">
-                            Hasta bakım ürünleri
+                            Supportline medikal ürünler
                           </span>
                         </div>
                       </div>

@@ -61,6 +61,8 @@ export const siteData = {
     "Şifa Medikal olarak ortopedi ürünleri, fizik tedavi destekleri, özel tabanlıklar, varis çorapları, lenfödem ve bası giysileri, meme protezi ürünleri ve medikal cihaz çözümleriyle yanınızdayız.",
   authorizedDealerText:
     "Sigvaris, Juzo ve Supportline markalarının tek yetkili bölge bayisi",
+  authorizedDealerSupportText:
+    "Varis çorabı, lenfödem bası giysileri ve medikal kompresyon ürünlerinde orijinal, güvenilir ve uzman destekli ürün çözümleri sunuyoruz.",
   aboutTitle: "Şifa Medikal Hakkında",
   aboutDescription:
     "Şifa Medikal, Adana'da medikal ürünler, ortopedi destek ürünleri ve fizik tedaviye yardımcı çözümler sunan bir firmadır. Kullanıcı ihtiyaçlarını doğru anlamaya, uygun ürün yönlendirmesi yapmaya ve güvenilir hizmet sunmaya odaklanır.",
@@ -123,13 +125,13 @@ export const productGroups: ProductGroup[] = [
   {
     title: "Varis Çorapları",
     description:
-      "Farklı kullanım ihtiyaçlarına uygun kompresyon çorabı seçenekleri.",
+      "Sigvaris varis çorabı seçenekleri dahil farklı kullanım ihtiyaçlarına uygun medikal kompresyon ürünleri.",
     icon: "compression",
   },
   {
     title: "Lenfödem ve Bası Giysileri",
     description:
-      "Lenfödem ve bası ihtiyaçlarına yönelik özel ürün grupları.",
+      "Juzo lenfödem ürünleri ve farklı bası giysileri ihtiyaçlarına yönelik güvenilir ürün grupları.",
     icon: "lymph",
   },
   {
@@ -153,7 +155,7 @@ export const productGroups: ProductGroup[] = [
   {
     title: "Hasta Bakım Ürünleri",
     description:
-      "Hasta bakımı ve günlük destek süreçleri için yardımcı medikal ürünler.",
+      "Supportline medikal ürünler dahil hasta bakımı ve günlük destek süreçleri için yardımcı çözümler.",
     icon: "care",
   },
 ];
@@ -162,13 +164,13 @@ export const featuredSolutions: FeatureCard[] = [
   {
     title: "Varis Çorabı ve Kompresyon Ürünleri",
     description:
-      "Farklı basınç ve kullanım ihtiyaçlarına uygun varis çorabı seçenekleri hakkında bilgi almak için bizimle iletişime geçebilirsiniz.",
+      "Sigvaris varis çorabı ve farklı medikal kompresyon ürünleri hakkında güvenilir bilgi almak için bizimle iletişime geçebilirsiniz.",
     icon: "compression",
   },
   {
     title: "Lenfödem ve Bası Giysileri",
     description:
-      "Lenfödem ve bası giysileri konusunda ürün grupları ve kullanım seçenekleri hakkında destek alabilirsiniz.",
+      "Juzo lenfödem ürünleri, lenfödem ürünleri ve bası giysileri konusunda ürün grupları hakkında destek alabilirsiniz.",
     icon: "lymph",
   },
   {
