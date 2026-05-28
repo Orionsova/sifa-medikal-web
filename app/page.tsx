@@ -4,6 +4,7 @@ import { Icon } from "@/components/site/icons";
 import { SectionHeading } from "@/components/site/section-heading";
 import {
   aboutCards,
+  contactActions,
   faqItems,
   featuredSolutions,
   navigationItems,
@@ -63,6 +64,24 @@ export default function Home() {
                       <Icon name="whatsapp" className="h-5 w-5" />
                       {"WhatsApp'tan Bilgi Al"}
                     </a>
+                  </div>
+                  <div className="card-surface flex flex-col gap-4 border-[var(--line-strong)] bg-white/88 p-5 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex items-start gap-4">
+                      <div className="inline-flex rounded-2xl bg-[var(--surface-blue)] p-3 text-[var(--brand-blue)]">
+                        <Icon name="shield" className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand-blue)]">
+                          Yetkili Bölge Bayisi
+                        </p>
+                        <p className="mt-2 text-base font-extrabold text-[var(--brand-navy)] sm:text-lg">
+                          {siteData.authorizedDealerText}
+                        </p>
+                      </div>
+                    </div>
+                    <span className="inline-flex w-fit rounded-full bg-[var(--surface-mint)] px-3 py-2 text-sm font-semibold text-[var(--brand-navy)]">
+                      Güven odaklı kurumsal tedarik yaklaşımı
+                    </span>
                   </div>
                   <div className="grid gap-4 sm:grid-cols-3">
                     {aboutCards.map((item) => (
@@ -284,58 +303,59 @@ export default function Home() {
                     description="Telefon, WhatsApp veya Instagram üzerinden bize ulaşabilir; form aracılığıyla talebinizi iletebilirsiniz."
                   />
                   <div className="grid gap-4">
-                    <div className="card-surface p-5">
-                      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand-blue)]">
-                        Telefon
-                      </p>
-                      <a
-                        href={siteData.phoneHref}
-                        className="mt-2 inline-block text-xl font-extrabold text-[var(--brand-navy)]"
-                      >
-                        {siteData.phone}
-                      </a>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      {contactActions.map((item) => (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          target={item.icon === "phone" ? undefined : "_blank"}
+                          rel={item.icon === "phone" ? undefined : "noreferrer"}
+                          className="card-surface group flex items-center gap-4 p-5 transition hover:-translate-y-0.5 hover:border-[var(--line-strong)]"
+                        >
+                          <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[var(--surface-blue)] text-[var(--brand-blue)]">
+                            <Icon name={item.icon} className="h-5 w-5" />
+                          </span>
+                          <span className="min-w-0">
+                            <span className="block text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand-blue)]">
+                              {item.label}
+                            </span>
+                            <span className="mt-1 block truncate text-lg font-extrabold text-[var(--brand-navy)]">
+                              {item.value}
+                            </span>
+                          </span>
+                        </a>
+                      ))}
                     </div>
-                    <div className="card-surface p-5">
-                      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand-blue)]">
-                        WhatsApp
-                      </p>
-                      <a
-                        href={siteData.whatsappHref}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-2 inline-block text-xl font-extrabold text-[var(--brand-navy)]"
-                      >
-                        {siteData.phone}
-                      </a>
-                    </div>
-                    <div className="card-surface p-5">
-                      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand-blue)]">
-                        Instagram
-                      </p>
-                      <a
-                        href={siteData.instagramHref}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-2 inline-block text-xl font-extrabold text-[var(--brand-navy)]"
-                      >
-                        {siteData.instagramHandle}
-                      </a>
-                    </div>
-                    <div className="card-surface p-5">
-                      <div className="flex items-center gap-3 text-[var(--brand-navy)]">
-                        <Icon name="location" className="h-5 w-5 text-[var(--brand-blue)]" />
+                    <div className="card-surface overflow-hidden p-3">
+                      <div className="mb-3 flex items-center justify-between gap-4 px-2 pt-2">
                         <div>
                           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand-blue)]">
-                            Lokasyon
+                            Google Maps
                           </p>
-                          <p className="mt-2 text-xl font-extrabold">{siteData.city}</p>
+                          <p className="mt-1 text-sm text-[var(--text-soft)]">
+                            Gerekirse [data/site.ts] içindeki `mapEmbedSrc` ve `mapsHref`
+                            alanlarını güncelleyin.
+                          </p>
                         </div>
+                        <a
+                          href={siteData.mapsHref}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn-secondary shrink-0"
+                        >
+                          <Icon name="location" className="h-4 w-4" />
+                          Yol Tarifi
+                        </a>
                       </div>
-                    </div>
-                    <div className="card-surface flex min-h-52 items-center justify-center p-6 text-center">
-                      <p className="max-w-xs text-lg font-semibold text-[var(--text-soft)]">
-                        Google Maps konumu buraya eklenecektir.
-                      </p>
+                      <div className="overflow-hidden rounded-[22px] border border-[var(--line-soft)] bg-white">
+                        <iframe
+                          title="Şifa Medikal Google Maps konumu"
+                          src={siteData.mapEmbedSrc}
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          className="h-72 w-full md:h-80"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>

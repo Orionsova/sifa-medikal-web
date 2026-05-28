@@ -20,6 +20,13 @@ export type FAQItem = {
   answer: string;
 };
 
+export type ContactAction = {
+  label: string;
+  value: string;
+  href: string;
+  icon: IconName;
+};
+
 export type IconName =
   | "shield"
   | "guide"
@@ -51,11 +58,16 @@ export const siteData = {
   heroTitle: "Adana'da Güvenilir Medikal Ürün Çözümleri",
   heroDescription:
     "Şifa Medikal olarak ortopedi ürünleri, fizik tedavi destekleri, özel tabanlıklar, varis çorapları, lenfödem ve bası giysileri, meme protezi ürünleri ve medikal cihaz çözümleriyle yanınızdayız.",
+  authorizedDealerText:
+    "Sigvaris, Juzo ve Supportline markalarının tek yetkili bölge bayisi",
   aboutTitle: "Şifa Medikal Hakkında",
   aboutDescription:
     "Şifa Medikal, Adana'da medikal ürünler, ortopedi destek ürünleri ve fizik tedaviye yardımcı çözümler sunan bir firmadır. Kullanıcı ihtiyaçlarını doğru anlamaya, uygun ürün yönlendirmesi yapmaya ve güvenilir hizmet sunmaya odaklanır.",
   contactSuccessMessage:
     "Mesajınız alınmıştır. En kısa sürede sizinle iletişime geçilecektir.",
+  mapsHref: "https://maps.google.com/?q=Şifa+Medikal+Adana",
+  mapEmbedSrc:
+    "https://maps.google.com/maps?q=Şifa%20Medikal%20Adana&t=&z=13&ie=UTF8&iwloc=&output=embed",
 };
 
 export const navigationItems: NavItem[] = [
@@ -194,3 +206,29 @@ export const faqItems: FAQItem[] = [
   },
 ];
 
+export const contactActions: ContactAction[] = [
+  {
+    label: "WhatsApp",
+    value: siteData.phone,
+    href: siteData.whatsappHref,
+    icon: "whatsapp",
+  },
+  {
+    label: "Instagram",
+    value: siteData.instagramHandle,
+    href: siteData.instagramHref,
+    icon: "instagram",
+  },
+  {
+    label: "Telefon",
+    value: siteData.phone,
+    href: siteData.phoneHref,
+    icon: "phone",
+  },
+  {
+    label: "Lokasyon",
+    value: siteData.city,
+    href: siteData.mapsHref,
+    icon: "location",
+  },
+];
