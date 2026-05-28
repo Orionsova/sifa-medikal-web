@@ -333,7 +333,8 @@ export default function Home() {
                             Google Maps
                           </p>
                           <p className="mt-1 text-sm text-[var(--text-soft)]">
-                            Gerekirse [data/site.ts] içindeki `mapEmbedSrc` ve `mapsHref`
+                            Gerekirse <code>data/site.ts</code> içindeki{" "}
+                            <code>mapEmbedSrc</code> ve <code>mapsHref</code>{" "}
                             alanlarını güncelleyin.
                           </p>
                         </div>
